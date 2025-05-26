@@ -1,0 +1,37 @@
+<%- include("partials/header.ejs") %>
+
+
+<h1 class="t-header">Welcome to my blog website</h1>
+
+<p class="intro">This is a simple blog website built with EJS and Node.js.</p>
+
+<form action="/submit" method="POST" style="width: 100%; max-width: 400px; margin: 0 auto;">
+  <input type="text" name="title" placeholder="Title" oninput="this.size = Math.max(this.value.length, 10)">
+  <input type="text" name="content" placeholder="Content" oninput="this.size = Math.max(this.value.length, 10)">
+  <input type="submit" value="Submit">
+</form>
+
+<% if (posts && posts.length > 0) { %>
+  <div class="posts-container">
+    <% for (var i = 0; i < posts.length; i++) { %>
+      <div class="post">
+        <h2 class="title-c"><%= posts[i].title %></h2>
+        <p class="content-c"><%= posts[i].content %></p>
+        <div class="post-actions">
+          <form action="/edit/<%= i %>" method="GET" style="display:inline;">
+            <button type="submit" class="edit-btn">Edit</button>
+          </form>
+          <form action="/delete/<%= i %>" method="POST" style="display:inline;">
+            <button type="submit" class="delete-btn">Delete</button>
+          </form>
+        </div>
+      </div>
+    <% } %>
+  </div>
+<% } else { %>
+  <p>No posts available.</p>
+<% } %>
+
+
+<%- include("partials/footer.ejs") %>
+

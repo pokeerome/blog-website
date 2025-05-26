@@ -1,0 +1,143 @@
+body {
+    background-color: #DFD0B8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto; /* This makes main grow to fill available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.t-header {
+  font-family: "Barrio", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem; /* Reduce space below h1 */
+  text-align: center;
+}
+
+.intro {
+  font-family: "Indie Flower", cursive;
+  font-weight: 100px;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin-top: 0; /* Remove space above p */
+}
+
+.title-c {
+  font-family: "Delius", cursive;
+  font-weight: bolder;
+  font-style: normal;
+  text-align: center;
+}
+
+.content-c {
+  font-family: "Funnel Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300px;
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+form input[type="text"] {
+  width: 100%;
+  max-width: 350px;
+  min-width: 180px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.post {
+  border: #222831 1px solid;
+  color: black;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #948979; /* Change to white or a lighter color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box; /* Add this to prevent overflow */
+}
+
+.post-actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.edit-btn {
+  background-color: #222831;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+
+.edit-btn:hover {
+  background-color: #ff8800;
+}
+
+.delete-btn {
+  background-color: #222831;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.cancel {
+  margin-top: 1rem;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    background: inherit;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+@media (max-width: 700px) {
+  .posts-container {
+    grid-template-columns: 1fr;
+    max-width: 500px; /* Optional: make it fit better on small screens */
+  }
+}

@@ -1,0 +1,9 @@
+<%- include("partials/header.ejs") %>
+<h1 class="edit">Edit Post</h1>
+<form action="/edit/<%= id %>" method="POST" style="width: 100%; max-width: 400px; margin: 0 auto;">
+  <input type="text" name="title" placeholder="Title" value="<%= post.title %>" oninput="this.size = Math.max(this.value.length, 10)" required>
+  <input type="text" name="content" placeholder="Content" value="<%= post.content %>" oninput="this.size = Math.max(this.value.length, 10)" required>
+  <input type="submit" value="Save">
+</form>
+<a class="cancel" href="/">Cancel</a>
+<%- include("partials/footer.ejs") %>
